@@ -1,0 +1,20 @@
+# Fitzhugh-Nagumo 
+dv/dt = -f(v) + w + Iapp
+dw/dt = eps*(-v-gamma*w)
+f(v) = v*(v-1)*(v-a)
+
+param Iapp=0., a=0.14, gamma=2.54, eps=0.01, ieoff=0
+init v=-0.3, w=-0.2
+
+@ total=100
+@ maxstor=1000000,meth=euler,dt=0.01
+#@ maxstor=1000000,meth=stiff,dt=0.01
+@ bound=100000,xp=v,yp=w
+@ xlo=-0.5,xhi=1.2,ylo=-0.3,yhi=0.1
+@ xmin=-0.5,xmax=1.2,ymin=-0.3,ymax=0.1
+
+#AUTO parameters
+@ autoymin=-0.5,autoymax=1.2,autoxmin=-0.2,autoxmax=0.5
+@ parmin=-10,parmax=20,dsmax=0.05,dsmin=0.000001,ds=0.001
+
+done
