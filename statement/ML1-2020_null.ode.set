@@ -1,0 +1,205 @@
+## Set file for C:\Users\jaume.colomhernandez\Desktop\ML1-2020.ode on Fri Oct 23 00:10:37 2020
+2   Number of equations and auxiliaries
+13   Number of parameters
+# Numerical stuff
+1    nout
+40    nullcline mesh
+9   Stiff
+200  total
+0.01  DeltaT
+0  T0
+0  Transient
+100000  Bound
+1e-12  DtMin
+1  DtMax
+0.001  Tolerance
+0.001  Abs. Tolerance
+0  Max Delay
+100   Eigenvector iterates
+0.001  Eigenvector tolerance
+0.001  Newton tolerance
+0  Poincare plane
+1e-05  Boundary value tolerance
+1e-05  Boundary value epsilon
+20   Boundary value iterates
+0   Poincare None
+1   Poincare variable
+1   Poincare sign
+0   Stop on Section
+0   Delay flag
+0  Current time
+0  Last Time
+0   MyStart
+0   INFLAG
+# Delays
+0.0
+0.0
+# Bndry conds
+0
+0
+# Old ICs
+-70  V
+0.5  W
+# Ending  ICs
+0  V
+0  W
+# Parameters
+0  Iapp
+2  v3
+30  v4
+-1.2  v1
+18  v2
+2  gl
+4.4  gca
+8  gk
+-60  vl
+120  vca
+-84  vk
+20  c
+0.04  phi
+# Graphics
+0.7071097251469876  rm
+-0.4999999999826661  rm
+0.4999958366025516  rm
+0.7071038372138505  rm
+0.5000041633974484  rm
+-0.4999999999826661  rm
+0  rm
+0.7071038372138505  rm
+0.7071097251469876  rm
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+1    
+2    
+1    
+1    
+0    
+-1000   
+1000   
+0    
+0   3DFlag
+0   Timeflag
+0   Colorflag
+0   Type
+1  color scale
+0   minscale
+55   xmax
+-90   xmin
+1.1   ymax
+-0.1   ymin
+12   zmax
+-12   zmin
+-17.5   
+0.01379310344827586   
+0.5   
+1.666666666666667   
+0   
+0.08333333333333333   
+45   Theta
+45   Phi
+0    xshft
+0    yshft
+0    zshft
+-90   xlo
+-0.1   ylo
+-90   
+-0.1   
+55   xhi
+1.1   yhi
+55   
+1.1   
+# Transpose variables etc
+V
+2   n columns
+1   n rows
+1   row skip
+1   col skip
+1   row 0
+# Coupling stuff for H funs
+0
+0
+# Array plot stuff
+
+1   NCols
+0   Row 1
+50   NRows
+8   RowSkip
+0  Zmin
+1  Zmax
+# Torus information 
+0    Torus flag 1=ON
+6.283185307179586  Torus period
+# Range information
+Iapp
+-1   eq-range stab col
+0   shoot flag 1=on
+10   eq-range steps
+0  eq_range low
+1  eq_range high
+V
+V
+20   Range steps
+0   Cycle color 1=on
+1   Reset data 1=on
+1   Use old I.C.s 1=yes
+0  Par1 low
+0  Par2 low
+1  Par1 high
+1  Par2 high
+Iapp
+0   BVP side
+0   color cycle flag 1=on
+10   BVP range steps
+0  BVP range low
+1  BVP range high
+RHS etc ...
+dV/dT=(IAPP+GL*(VL-V)+GCA*MINF(V)*(VCA-V)+GK*W*(VK-V))/C
+dW/dT=PHI*(WINF(V)-W)/TAUW(V)
+
+User-defined functions:
+minf(ARG1) = 0.5*(1+tanh((arg1-v1)/v2))
+winf(ARG1) = 0.5*(1+tanh((arg1-v3)/v4))
+tauw(ARG1) = 1/(cosh((arg1-v3)/(2*v4)))
